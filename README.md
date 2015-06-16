@@ -9,4 +9,5 @@ taper 'cd ' puis drag and drop l'emplacement du fichier
 taper 'npm update' pour les MaJ 
 Puis enfin lancer 'node server.js' 
 
-Et voilà si l'osc sur resolume est activé , résolume alternera entre les deux première vidéo 
+
+Et voilà si l'osc sur resolume est activé ( port 7000 )  , résolume alternera entre les deux premières vidéos
