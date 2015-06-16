@@ -1,7 +1,6 @@
 var twit = require('twit');
 var fs = require('fs');
 var https = require('https');
-var keypress = require('keypress');
  var osc = require('node-osc');
 
 var client = new osc.Client('127.0.0.1', 7000);
@@ -69,15 +68,3 @@ stream.on('tweet', function (tweet) {
   }
 });  
 
-// make `process.stdin` begin emitting "keypress" events
-keypress(process.stdin);
-
-// listen for the "keypress" event
-process.stdin.on('keypress', function (ch, key) {
-  console.log('got "keypress"', key);
- 
-   
-  if (key && key.ctrl && key.name == 'c') {
-    process.stdin.pause();
-  }
-});
