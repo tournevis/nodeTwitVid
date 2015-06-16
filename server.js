@@ -14,11 +14,9 @@ var T = new twit({
 console.log("stream'in baby");
 var filter = '#vidTest198'
 var stream = T.stream('statuses/filter', { track: filter });
- var client = new osc.Client('127.0.0.1', 7000);
-/*var file = fs.createWriteStream("vid.jpg");
-var request = http.get("https://pbs.twimg.com/media/CGsmG-3XIAAWyAi.jpg", function(response){
-	response.pipe(file);
-});*/
+var client = new osc.Client('127.0.0.1', 7000);
+
+
 var videoCounter = 0 ;
 
 var download = function(url, dest, cb) {
@@ -40,12 +38,12 @@ var download = function(url, dest, cb) {
           client.send('/layer3/clip2/connect', 1);
         }
       });
-    }).on('error', function(err) { // Handle errors
-    fs.unlink('Downloading' + dest+ '.mov' ); // Delete the file async. (But we don't check the result)
+    }).on('error', function(err) { 
+    fs.unlink('Downloading' + dest+ '.mov' ); 
     if (cb) cb(err.message);
   });
 }
-//download("https://twitter.com/GuillaumeTC/status/608746402693455872.html","vidazae.html")
+
 
 stream.on('tweet', function (tweet) {
  	console.log("+++++ TWEET +++++ "  + "\n");
