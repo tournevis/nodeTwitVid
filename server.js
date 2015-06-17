@@ -11,12 +11,12 @@ var T = new twit({
   , access_token_secret:  'wCX1qgei92tUoDEbcdGhTAsGXSEp1IjlpR8TM8ZHmRIHI'
 });
 
-console.log("stream'in baby");
+console.log("Server Start");
+/*** INIT MY VAR  ***/
+
 var filter = '#vidTest198'
 var stream = T.stream('statuses/filter', { track: filter });
 var client = new osc.Client('127.0.0.1', 7000);
-
-
 var videoCounter = 0 ;
 
 var download = function(url, dest, cb) {
@@ -49,7 +49,7 @@ stream.on('tweet', function (tweet) {
  	console.log("+++++ TWEET +++++ "  + "\n");
   
   if( tweet.extended_entities != null && tweet.retweeted_status == null){
-    console.log(tweet);
+   
     if (tweet.extended_entities.media[0].type == "video"){
     var videolink;
     var videoUrl = tweet.extended_entities.media[0].video_info.variants ;
