@@ -2,7 +2,7 @@
 
 Voici l'application Node pour récupérer les vidéo twitter selon un #. Cette appli controle pour l'instant 2 colonne de Resolume Voir resolumeLayout
 
-![alt tag](https://github.com/tournevis/nodeTwitVid/resolumeLayout.png)
+![alt tag](https://github.com/tournevis/nodeTwitVid/blob/master/resolumeLayout.png)
 
 ##Le Hashtag
 
