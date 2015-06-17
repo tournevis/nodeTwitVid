@@ -13,8 +13,9 @@ var T = new twit({
 
 console.log("Server Start");
 /*** INIT MY VAR  ***/
+///layer3/clip1/preview
 
-var filter = '#vidTest198'
+var filter = '#FurtherFaster'
 var stream = T.stream('statuses/filter', { track: filter });
 var client = new osc.Client('127.0.0.1', 7000);
 var videoCounter = 0 ;
@@ -32,7 +33,7 @@ var download = function(url, dest, cb) {
         fs.rename('Downloading' + dest+ '.mov' , dest + '.mov', function(err) {
           if ( err ) console.log('ERROR: ' + err);
         });
-        if(videoCounter%2 == 0 ){
+         if(videoCounter%2 == 0 ){
           client.send('/layer3/clip1/connect',1);
         }else{
           client.send('/layer3/clip2/connect', 1);
