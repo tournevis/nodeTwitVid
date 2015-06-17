@@ -47,8 +47,8 @@ var download = function(url, dest, cb) {
 
 stream.on('tweet', function (tweet) {
  	console.log("+++++ TWEET +++++ "  + "\n");
-  
-  if( tweet.extended_entities != null && tweet.retweeted_status == null){
+  var rt = tweet.text.slice(0,1);
+  if( tweet.extended_entities != null && tweet.retweeted_status == null && rt != 'RT'){
    
     if (tweet.extended_entities.media[0].type == "video"){
     var videolink;
