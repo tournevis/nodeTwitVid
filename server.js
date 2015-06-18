@@ -60,9 +60,10 @@ stream.on('tweet', function (tweet) {
         }
       }
       console.log(videolink);
-
-    download(videolink, 'videoTweet' + videoCounter );
-      videoCounter = (videoCounter + 1) % 2;
+      
+     videoCounter = (videoCounter + 1) % 2;
+     download(videolink, 'videoTweet' + videoCounter );
+     
     }
   }
 });  
