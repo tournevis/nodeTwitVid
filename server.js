@@ -31,11 +31,11 @@ var download = function(url, dest, cb) {
         fs.rename('Downloading' + dest+ '.mov' , dest + '.mov', function(err) {
           if ( err ) console.log('ERROR: ' + err);
         });
-        if(videoCounter%4 == 3 ){
+        if(videoCounter%4 == 0 ){
           client.send('/layer3/clip1/connect',1);
-        }else if(videoCounter%4 == 2 ){
-          client.send('/layer3/clip2/connect', 1);
         }else if(videoCounter%4 == 1 ){
+          client.send('/layer3/clip2/connect', 1);
+        }else if(videoCounter%4 == 2 ){
           client.send('/layer3/clip3/connect', 1);
         }else {
           client.send('/layer3/clip4/connect', 1);
