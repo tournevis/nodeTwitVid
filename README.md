@@ -8,7 +8,7 @@ Voici l'application Node pour récupérer les vidéo twitter selon un #. Cette a
 
 Pour mes test j'ai utilisé celui-ci :
 
-Le hashtag : #vidTest198
+Le hashtag : #FurtherFaster
 
 ##Installation 
 
