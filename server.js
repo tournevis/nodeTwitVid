@@ -32,13 +32,13 @@ var download = function(url, dest, cb) {
           if ( err ) console.log('ERROR: ' + err);
         });
         if(videoCounter%4 == 0 ){
-          client.send('/layer3/clip1/connect',1);
+          client.send('/layer1/clip1/connect',1);
         }else if(videoCounter%4 == 1 ){
-          client.send('/layer3/clip2/connect', 1);
+          client.send('/layer3/clip1/connect', 1);
         }else if(videoCounter%4 == 2 ){
-          client.send('/layer3/clip3/connect', 1);
+          client.send('/layer5/clip1/connect', 1);
         }else {
-          client.send('/layer3/clip4/connect', 1);
+          client.send('/layer7/clip1/connect', 1);
         }
       });
     }).on('error', function(err) { 
