@@ -1,9 +1,7 @@
 var twit = require('twit');
 var fs = require('fs');
 var https = require('https');
- var osc = require('node-osc');
-
-var client = new osc.Client('127.0.0.1', 7000);
+var osc = require('node-osc');
 var T = new twit({
     consumer_key:         'PyED5K5Adbx87i8us5yMAVcDv'
   , consumer_secret:      'PBfEhhCLkGlPkwETrL3U64K2j1jHXFg8lezbF5ZjivN4uqsIAX'
@@ -40,7 +38,7 @@ var download = function(url, dest, cb) {
         }
       });
     }).on('error', function(err) { 
-    fs.unlink('Downloading' + dest+ '.mov' ); 
+    fs.unlink('Downloading' + dest + '.mov' ); 
     if (cb) cb(err.message);
   });
 }
