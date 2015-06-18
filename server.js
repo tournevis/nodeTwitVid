@@ -31,10 +31,14 @@ var download = function(url, dest, cb) {
         fs.rename('Downloading' + dest+ '.mov' , dest + '.mov', function(err) {
           if ( err ) console.log('ERROR: ' + err);
         });
-         if(videoCounter%2 == 0 ){
+        if(videoCounter%2 == 0 ){
           client.send('/layer3/clip1/connect',1);
-        }else{
+        }else if(videoCounter%2 == 1 ){
           client.send('/layer3/clip2/connect', 1);
+        }else if(videoCounter%2 == 2 ){
+          client.send('/layer3/clip3/connect', 1);
+        }else {
+          client.send('/layer3/clip4/connect', 1);
         }
       });
     }).on('error', function(err) { 
@@ -59,7 +63,7 @@ stream.on('tweet', function (tweet) {
       }
       console.log(videolink);
       
-     videoCounter = (videoCounter + 1) % 2;
+     videoCounter = (videoCounter + 1) % 4;
      download(videolink, 'videoTweet' + videoCounter );
      
     }
